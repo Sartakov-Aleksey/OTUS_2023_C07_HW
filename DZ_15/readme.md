@@ -67,7 +67,7 @@ cd /home/postgres/Документы/дом_зад_otus_курсы__си_/дом
 
 ![Успешная обработка](https://github.com/Sartakov-Aleksey/OTUS_2023_C07_HW/blob/main/DZ_15/img/ok.png)
 
-![Попытка получить результаты из текстового поля](https://www.example.com/image.jpg)
+![Попытка получить результаты из текстового поля](https://github.com/Sartakov-Aleksey/OTUS_2023_C07_HW/blob/main/DZ_15/img/column_as_text.png)
 
 <p> &nbsp; </p>   
 
