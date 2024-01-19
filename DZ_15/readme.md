@@ -63,9 +63,9 @@ cd /home/postgres/Документы/дом_зад_otus_курсы__си_/дом
 
 Примеры работы:
 
-![Ошибка соединения с сервером](https://www.example.com/image.jpg)
+![Ошибка соединения с сервером](https://github.com/Sartakov-Aleksey/OTUS_2023_C07_HW/blob/main/DZ_15/img/error_connect.png)
 
-![Успешная обработка](https://www.example.com/image.jpg)
+![Успешная обработка](https://github.com/Sartakov-Aleksey/OTUS_2023_C07_HW/blob/main/DZ_15/img/ok.png)
 
 ![Попытка получить результаты из текстового поля](https://www.example.com/image.jpg)
 
