@@ -61,12 +61,21 @@ cd /home/postgres/Документы/дом_зад_otus_курсы__си_/дом
 
 <p> &nbsp; </p>   
 
-Примеры работы:
+##Примеры работы:
 
+
+Сообщение при ошибки соединения с сервером:
 ![Ошибка соединения с сервером](https://github.com/Sartakov-Aleksey/OTUS_2023_C07_HW/blob/main/DZ_15/img/error_connect.png)
 
+<p> &nbsp; </p>   
+
+
+Успешная обработка заданного столбца таблицы:
 ![Успешная обработка](https://github.com/Sartakov-Aleksey/OTUS_2023_C07_HW/blob/main/DZ_15/img/ok.png)
 
+<p> &nbsp; </p>   
+
+Попытка получить результаты из текстового поля (сообщение, что это сделать нельзя):
 ![Попытка получить результаты из текстового поля](https://github.com/Sartakov-Aleksey/OTUS_2023_C07_HW/blob/main/DZ_15/img/column_as_text.png)
 
 <p> &nbsp; </p>   
