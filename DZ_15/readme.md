@@ -77,11 +77,13 @@ cd /home/postgres/Документы/дом_зад_otus_курсы__си_/дом
 Попытка получить результаты из текстового поля (сообщение, что это сделать нельзя):
 ![Попытка получить результаты из текстового поля](https://github.com/Sartakov-Aleksey/OTUS_2023_C07_HW/blob/main/DZ_15/img/column_as_text.png)
 
+
+
 ###  ПРИМЕЧАНИЕ:
 
-Выбран этот. *** В БД PostgreSQL имеется два вида дисперсии: var_pop ( numeric_type ) → double precision для real или double precision,  иначе numeric Вычисляет дисперсию для генеральной совокупности входных значений (квадрат стандартного отклонения).
+*** В БД PostgreSQL имеется два вида дисперсии: var_pop ( numeric_type ) → double precision для real или double precision,  иначе numeric Вычисляет дисперсию для генеральной совокупности входных значений (квадрат стандартного отклонения). Выбран этот. 
 
-И var_samp ( числовой_тип ) → double precision для real или double precision, иначе numeric Вычисляет дисперсию по выборке для входных значений (квадрат отклонения по выборке.
+И var_samp ( числовой_тип ) → double precision для real или double precision, иначе numeric Вычисляет дисперсию по выборке для входных значений (квадрат отклонения по выборке).
  
 
 <p> &nbsp; </p> 
