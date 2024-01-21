@@ -61,17 +61,17 @@ cd /home/postgres/Документы/дом_зад_otus_курсы__си_/дом
 ### Примеры работы:
 
 Сообщение при отсутствии файла исходника или прав на его открытие:
-![Ошибка соединения с сервером](https://github.com/Sartakov-Aleksey/OTUS_2023_C07_HW/blob/main/DZ_15/img/error_connect.png)
+![Ошибка соединения с сервером](https://github.com/Sartakov-Aleksey/OTUS_2023_C07_HW/blob/main/DZ_02/img/no_input_file.png)
 
 <p> &nbsp; </p> 
 
 Попытка запись файл в папку, на которую нет прав для записи:
-![Попытка получить результаты из текстового поля](https://github.com/Sartakov-Aleksey/OTUS_2023_C07_HW/blob/main/DZ_15/img/column_as_text.png)
+![Попытка получить результаты из текстового поля](https://github.com/Sartakov-Aleksey/OTUS_2023_C07_HW/blob/main/DZ_02/img/no_access_rights.png)
 
 <p> &nbsp; </p> 
 
 Успешная обработка программы:
-![Успешная обработка](https://github.com/Sartakov-Aleksey/OTUS_2023_C07_HW/blob/main/DZ_15/img/ok.png)
+![Успешная обработка](https://github.com/Sartakov-Aleksey/OTUS_2023_C07_HW/blob/main/DZ_02/img/success.png)
 
 
 <p> &nbsp; </p> 
