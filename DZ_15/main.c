@@ -67,6 +67,8 @@ int main(int argc, char **argv)
     
     if (PQstatus(соединение) == CONNECTION_OK)
     {
+        // было до проверки ДЗ_15
+        /*
         char п_запрос_1[512]="select avg(";
         strcat(п_запрос_1,имя_столбца);
         strcat(п_запрос_1,"), max(");
@@ -78,7 +80,17 @@ int main(int argc, char **argv)
         strcat(п_запрос_1,"), sum(");
         strcat(п_запрос_1,имя_столбца);
         strcat(п_запрос_1,") from ");
-        strcat(п_запрос_1, имя_таблицы); 
+        strcat(п_запрос_1, имя_таблицы);    */
+        
+        
+        // после рекомендации проверяющего ДЗ_15
+        char п_запрос_1[512]={};
+        const char *query_format = "SELECT AVG(%s), MAX(%s), MIN(%s), var_pop(%s), SUM(%s) FROM %s";
+        sprintf(п_запрос_1, query_format, имя_столбца, имя_столбца, имя_столбца, имя_столбца, имя_столбца, имя_таблицы);        
+        
+        
+        
+        
         
         результат_запроса = PQexec(соединение, п_запрос_1); 
         printf("%s\n", п_запрос_1);
