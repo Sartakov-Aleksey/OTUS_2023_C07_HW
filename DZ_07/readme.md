@@ -56,12 +56,25 @@ make valgrind
 которая запускает функцию на строке 660 в том же файле = http_get_shared(json_url, clib_package_curl_share), \
 которая в свою очередь делает запрос к функции **malloc (http-get.c   стр 46)**.
 
-После чего добавил там код 
+После чего изменил код 
 
 ```
-  // Возможно ошибка стр 660
-  http_get_free(res);   // очистка памяти void http_get_free(http_get_response_t *res) 
-     // именно структуры в файле /deps/http-get/http-get.c
+#ifdef HAVE_PTHREADS
+      init_curl_share();
+      _debug("GET %s", json_url);
+      res = http_get_shared(json_url, clib_package_curl_share);
+#else
+
+ ____ на _____
+ 
+#ifdef HAVE_PTHREADS
+      init_curl_share();
+      _debug("GET %s", json_url);	
+      // Возможно ошибка стр 660
+      http_get_free(res);   // очистка памяти void http_get_free(http_get_response_t *res)  
+	      // именно структуры в файле /deps/http-get/http-get.c
+      res = http_get_shared(json_url, clib_package_curl_share);
+#else
 ```
 
 <p> &nbsp; </p> 
