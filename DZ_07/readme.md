@@ -52,11 +52,8 @@ make valgrind
 ```
 В итоге была найдено всего одно условие, которое удовлетворяет критериям. 
 Главная функция clib_package_new_from_slug_with_package_name (clib-package.c:660) 
-
 в файле "/src/common/clib-package.c", 
-
 которая запускает функцию на строке 660 в том же файле = http_get_shared(json_url, clib_package_curl_share), 
-
 которая в свою очередь делает запрос к функции **malloc (http-get.c   стр 46)**.
 
 После чего добавил там код 
