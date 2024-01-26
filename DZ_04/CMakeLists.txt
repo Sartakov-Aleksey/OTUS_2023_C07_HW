@@ -16,8 +16,10 @@ Set (CMAKE_C_STANDART_REQUIRED True)
 message(STATUS "Начинаем компоновку и сборку программы версии = ${CMAKE_PROJECT_VERSION}")
 message(STATUS "Корневой каталог для сборки: ${CMAKE_BINARY_DIR}")
 
-find_package(CURL)	#Found PostgreSQL: /usr/lib/x86_64-linux-gnu/libpq.so (found version "16.0") 
-message(STATUS "Пакет/испол_модуль для PostgreSQL для сборки: ${CURL_LIBRARIES}\n")
+find_package(CURL REQUIRED)	#Found PostgreSQL: /usr/lib/x86_64-linux-gnu/libpq.so (found version "16.0") 
+include_directories(${CURL_INCLUDE_DIRS})
+
+message(STATUS "Пакет/испол_модуль для CURL сборки: ${CURL_LIBRARIES}\n")
 
 
 
