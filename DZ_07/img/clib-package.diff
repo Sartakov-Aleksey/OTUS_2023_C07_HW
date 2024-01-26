@@ -1,0 +1,14 @@
+--- clib-package.c	2020-09-08 02:51:23.000000000 +0300
++++ corrected_clib-package.c	2024-01-26 16:27:30.739481000 +0300
+@@ -656,7 +656,10 @@
+     } else {
+ #ifdef HAVE_PTHREADS
+       init_curl_share();
+-      _debug("GET %s", json_url);
++      _debug("GET %s", json_url);	
++      // Возможно ошибка стр 660
++      http_get_free(res);   // очистка памяти void http_get_free(http_get_response_t *res)  
++	      // именно структуры в файле /deps/http-get/http-get.c
+       res = http_get_shared(json_url, clib_package_curl_share);
+ #else
+       res = http_get(json_url);
