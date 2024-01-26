@@ -21,9 +21,9 @@ make valgrind
 
 ## II. Как делался поиск утечки памяти.
 
-> * Запустил valgrind. Rjvfylf **"cd /obmen/_git_OTUS_2023-C01/OTUS_2023_C07_HW/DZ_07/clib/test/package/"** и **"make valgrind"**. 
-> * Резульаты скопировал в текстовой файл. Получилось чуть более 1500 строк записей.
-> * В папке с проектом запустил поиск слова "malloc". Получил 35 файлов с этой функцией.
+> * Запустил valgrind. Команда **"cd /obmen/_git_OTUS_2023-C01/OTUS_2023_C07_HW/DZ_07/clib/test/package/"** и **"make valgrind"**. 
+> * Резульаты скопировал в отдельный текстовой файл. Получилось чуть более 1500 строк записей.
+> * В папке с проектом запустил поиск слова "malloc" через SublimeText. Получил 35 файлов с этой функцией.
 > * В папке с проектом запустил поиск слова "calloc". Получил 0 файлов.
 > * Искал совпадение в результате работы программы valgrind с ошибкой "definitely" и списком файлов, имеющих функцию "mallcoc". Получил всего 3 файла: "/src/common/clib-package.c", "/deps/strdup/strdup.c", "/deps/http-get/http-get.c".
 > * Искал возврат функции из запроса malloc и в конечной функции (куда приходил ответ) искал функцию free(...) по данному запросу.
@@ -49,6 +49,23 @@ make valgrind
  нет malloc -> clib_package_install (clib-package.c:1383)	 = hash_set(visited_packages, strdup(pkg->name), "t");
  нет malloc -> clib_package_install (clib-package.c:1579)	 = clib_package_install_dependencies(pkg, dir, verbose); 
  ??? clib_package_install_dependencies (clib-package.c:1615)     = install_packages(pkg->dependencies, dir, verbose);
+```
+В итоге была найдено всего одно условие, которое удовлетворяет критериям. 
+
+Главная функция clib_package_new_from_slug_with_package_name (clib-package.c:660) 
+
+в файле "/src/common/clib-package.c", 
+
+которая запускает функцию на строке 660 в том же файле = http_get_shared(json_url, clib_package_curl_share), 
+
+которая в свою очередь делает запрос к функции **malloc (http-get.c   стр 46)**.
+
+После чего ообавил там код 
+
+```
+  // Возможно ошибка стр 660
+  http_get_free(res);   // очистка памяти void http_get_free(http_get_response_t *res) 
+     // именно структуры в файле /deps/http-get/http-get.c
 ```
 
 <p> &nbsp; </p> 
