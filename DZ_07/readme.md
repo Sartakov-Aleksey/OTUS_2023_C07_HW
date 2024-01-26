@@ -50,8 +50,8 @@ make valgrind
  нет malloc -> clib_package_install (clib-package.c:1579)	 = clib_package_install_dependencies(pkg, dir, verbose); 
  ??? clib_package_install_dependencies (clib-package.c:1615)     = install_packages(pkg->dependencies, dir, verbose);
 ```
-В итоге была найдено всего одно условие, которое удовлетворяет критериям. 
-Главная функция clib_package_new_from_slug_with_package_name (clib-package.c:660) 
+В итоге была найдено всего одно условие, которое удовлетворяет критериям. \
+Главная функция clib_package_new_from_slug_with_package_name (clib-package.c:660) \
 в файле "/src/common/clib-package.c", 
 которая запускает функцию на строке 660 в том же файле = http_get_shared(json_url, clib_package_curl_share), 
 которая в свою очередь делает запрос к функции **malloc (http-get.c   стр 46)**.
