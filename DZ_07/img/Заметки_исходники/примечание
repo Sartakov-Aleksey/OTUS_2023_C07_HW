@@ -1,6 +1,23 @@
 
-первоначально было просто core
+cmake ../ -DCMAKE_BUILD_TYPE=Debug  # создаёт ключи -g -O0
 
+cmake ../ -DCMAKE_BUILD_TYPE=Release  # создаёт ключ -O3
+
+rm -fr * # удаляет все файлы в текущем каталоге
+
+
+код :
+cmake ../ -DNDEBUG -O3
+  ищет в Си коде строки
+  #IF NDEBUG  = НЕ ДЕБАГ (НЕ ОТЛАДКА) = РЕЛИЗ
+  ...
+  #ENDIF
+
+
+
+
+
+первоначально было просто core
 
 новый путь к файлу с описанием ошибки:
 sysctl -w kernel.core_pattern="/tmp/coredump_%e.%p"
